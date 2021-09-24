@@ -4,6 +4,9 @@ const indexController = {
   },
   login: function(req, res, next) {
     res.render('login', { title: 'Express' });
+  },
+  registrarse: function(req, res, next) {
+    res.render('registracion', { title: 'Express' });
   }
 }
 
