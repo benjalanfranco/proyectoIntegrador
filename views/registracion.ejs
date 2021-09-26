@@ -7,15 +7,54 @@
     <%- include('./partials/headerDeslogueado') %>
 
     <main>
-        <div class="uk-section uk-section-small">
-            <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
-                <form action="">
-                    
-                    <h2>(Formulario de registración)</h2>
-            
-                </form>
+        <form>
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="validationDefault01">Nombre</label>
+                <input type="text" class="form-control" id="validationDefault01" placeholder="Nombre" name="Nombre" value="" required>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="validationDefault02">Apellido</label>
+                <input type="text" class="form-control" id="validationDefault02" placeholder="Apellido" name="Apellido" value="" required>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="validationDefaultUsername">Usuario</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                  </div>
+                  <input type="text" class="form-control" id="validationDefaultUsername" name="Usuario" placeholder="" aria-describedby="inputGroupPrepend2" required>
+                </div>
+              </div>
             </div>
-        </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationDefault03">Contraseña</label>
+                <input type="text" class="form-control" id="validationDefault03" name="Contraseña" placeholder="Contraseña" required>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationDefault04">Email</label>
+                <input type="text" class="form-control" id="validationDefault04" name="Email" placeholder="Email" required>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationDefault05">Telefono</label>
+                <input type="" class="form-control" id="validationDefault05" name="Telefono" placeholder="Telefono" required>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationDefault05">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" id="validationDefault05" name="Fecha de Nacimiento" placeholder="Fecha de nacimiento" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label" for="invalidCheck2">
+                  Agree to terms and conditions
+                </label>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </form>
     </main>
 
     <%- include('./partials/footer') %>
