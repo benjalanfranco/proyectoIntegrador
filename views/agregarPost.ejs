@@ -7,15 +7,32 @@
     <%- include('./partials/headerLogueado') %>
 
     <main>
-        <div class="uk-section uk-section-small">
-            <div class="uk-container uk-container-large uk-flex">
-                <form action="">
-                    <h2>(Formulario para agregar un post)</h2>
-
-                </form>
-
+        <form>
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Insertar imagen</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
             </div>
-        </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Ubicacion</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ubicacion">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Categoria</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Futbol</option>
+                  <option>Tenis</option>
+                  <option>Rugby</option>
+                  <option>Volley</option>
+                  <option>Basket</option>
+                  <option>Golf</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Descripcion</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+          </form>
     </main>
     
     <%- include('./partials/footer') %> 
