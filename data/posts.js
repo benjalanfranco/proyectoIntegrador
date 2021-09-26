@@ -7,14 +7,12 @@ let posts = {
                 createdAt: '25 de septiembre',
                 categoria: 'Surf',
                 user_id: 1,
+                username: 'fabianaruiz',
                 user: { id: 1, username: 'fabianaruiz', firstName: 'Fabiana'},
                 likes: 32,
                 comentarios: [
                     {contenido: 'Disfrutee amiga!', fecha: '25 de septiembre', likes: 3},
                     {contenido: 'Surfeando la vida.', fecha: '25 de septiembre', likes: 1},
-                    {contenido: 'Que lujooo', fecha: '25 de septiembre', likes: 0},
-                    {contenido: 'Que flow tenes... sos lo mas.', fecha: '25 de septiembre', likes: 5},
-                    {contenido: 'Que buena izquierda la de atras!', fecha: '25 de septiembre', likes: 1},
                 ]
             },
             {
@@ -24,14 +22,12 @@ let posts = {
                 createdAt: '25 de septiembre',
                 categoria: 'Surf',
                 user_id: 1,
+                username: 'fabianaruiz',
                 user: { id: 1, username: 'fabianaruiz', firstName: 'Fabiana'},
                 likes: 32,
                 comentarios: [
                     {contenido: 'Disfrutee amiga!', fecha: '25 de septiembre', likes: 3},
                     {contenido: 'Surfeando la vida.', fecha: '25 de septiembre', likes: 1},
-                    {contenido: 'Que lujooo', fecha: '25 de septiembre', likes: 0},
-                    {contenido: 'Que flow tenes... sos lo mas.', fecha: '25 de septiembre', likes: 5},
-                    {contenido: 'Que buena izquierda la de atras!', fecha: '25 de septiembre', likes: 1},
                 ]
             },
             {
@@ -41,14 +37,12 @@ let posts = {
                 createdAt: '25 de septiembre',
                 categoria: 'Surf',
                 user_id: 1,
+                username: 'fabianaruiz',
                 user: { id: 1, username: 'fabianaruiz', firstName: 'Fabiana'},
                 likes: 32,
                 comentarios: [
                     {contenido: 'Disfrutee amiga!', fecha: '25 de septiembre', likes: 3},
                     {contenido: 'Surfeando la vida.', fecha: '25 de septiembre', likes: 1},
-                    {contenido: 'Que lujooo', fecha: '25 de septiembre', likes: 0},
-                    {contenido: 'Que flow tenes... sos lo mas.', fecha: '25 de septiembre', likes: 5},
-                    {contenido: 'Que buena izquierda la de atras!', fecha: '25 de septiembre', likes: 1},
                 ]
             },
             {
@@ -58,14 +52,12 @@ let posts = {
                 createdAt: '25 de septiembre',
                 categoria: 'Surf',
                 user_id: 1,
+                username: 'fabianaruiz',
                 user: { id: 1, username: 'fabianaruiz', firstName: 'Fabiana'},
                 likes: 32,
                 comentarios: [
                     {contenido: 'Disfrutee amiga!', fecha: '25 de septiembre', likes: 3},
                     {contenido: 'Surfeando la vida.', fecha: '25 de septiembre', likes: 1},
-                    {contenido: 'Que lujooo', fecha: '25 de septiembre', likes: 0},
-                    {contenido: 'Que flow tenes... sos lo mas.', fecha: '25 de septiembre', likes: 5},
-                    {contenido: 'Que buena izquierda la de atras!', fecha: '25 de septiembre', likes: 1},
                 ]
             },
             {
@@ -75,14 +67,12 @@ let posts = {
                 createdAt: '25 de septiembre',
                 categoria: 'Surf',
                 user_id: 1,
+                username: 'fabianaruiz',
                 user: { id: 1, username: 'fabianaruiz', firstName: 'Fabiana'},
                 likes: 32,
                 comentarios: [
                     {contenido: 'Disfrutee amiga!', fecha: '25 de septiembre', likes: 3},
                     {contenido: 'Surfeando la vida.', fecha: '25 de septiembre', likes: 1},
-                    {contenido: 'Que lujooo', fecha: '25 de septiembre', likes: 0},
-                    {contenido: 'Que flow tenes... sos lo mas.', fecha: '25 de septiembre', likes: 5},
-                    {contenido: 'Que buena izquierda la de atras!', fecha: '25 de septiembre', likes: 1},
                 ]
             }            
            ],
@@ -93,6 +83,15 @@ let posts = {
                 return posts.lista[i];
             }
         }
+    }, 
+    findByUser: function(userId){
+        let result = [];
+        for (let i = 0; i < posts.lista.length; i++){
+            if (posts.lista[i].user_id == userId) {
+                result.push(posts.lista[i]);
+            }
+        }
+        return result
     }
 }
 
