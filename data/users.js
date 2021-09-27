@@ -78,8 +78,8 @@ let users = {
     }, 
     findByUser: function(userId){
         let result = [];
-        for (let i = 0; i < posts.lista.length; i++){
-            if (posts.lista[i].user_id == userId) {
+        for (let i = 0; i < this.lista.length; i++){
+            if (this.lista[i].user_id == userId) {
                 result.push(posts.lista[i]);
             }
         }
@@ -87,5 +87,6 @@ let users = {
     },
 
         };
+
 
 module.exports = users;
