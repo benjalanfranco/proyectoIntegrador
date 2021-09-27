@@ -2,7 +2,7 @@ const posts = require ('../data/posts');
 
 const postController = {
     detallePost: function(req, res, next) {
-      const post = posts.findById(req.params.id)
+      let post = posts.findById(req.params.id)
       if (post){
       res.render('detallePost', {post}); 
       }

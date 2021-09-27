@@ -144,9 +144,9 @@ let posts = {
             },        
            ],
     
-    findById: function (Id){
+    findById: function (id){
         for (let i=0; i < posts.lista.length; i++){
-            if (posts.lista[i].id == Id){
+            if (posts.lista[i].id == id){
                 return posts.lista[i];
             }
         }
