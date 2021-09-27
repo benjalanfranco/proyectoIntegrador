@@ -1,3 +1,6 @@
+let comments = require('./comments')
+
+
 let posts = {
     lista: [
             {
