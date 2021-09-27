@@ -1,25 +1,27 @@
-<header class="uk-background-primary">
-    <section class=" uk-container uk-container-large">
-        <div class="">
-            <nav class="" uk-navbar>
-                <div class="uk-navbar-left">
-                    <h2 class="logo"><a href='/'>Deporter</a></h2>
-                </div>
-                <div class="uk-navbar-center">
-                    <ul class="uk-flex uk-flex-between uk-flex-middle">
-                        <li><a href='/'>Home</a></li>
-                        <li><a href='/registracion'>Registro</a></li>
-                        <li><a href='/login'>Login</a></li>
-                    </ul>
-                </div>
-                <div class="uk-navbar-right">
-                    <a href='/users/agregarPost'>Agregar post</a>
-                    <form action="" class="uk-search uk-search-default">
-                        <span uk-search-icon></span>
-                        <input type="search" class="uk-search-input" placeholder="Buscar...">
-                    </form>
-                </div>
-            </nav>
-        </div>
-    </section>
-</header>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="/">Deporter</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/registracion">Registrarse</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/login">login</a>
+        </li>
+      </ul>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Agregar Post</button>
+      <div>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
+          </form>
+      </div>
+     
+    </div>
+  </nav>
