@@ -2,5 +2,20 @@
     box-sizing: border-box;
 }
 main{
-    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    padding: 16px;
+    margin-bottom: 60px;
 }
+header {
+    background-color: white;
+  }
+  h1 {
+    font-size: 25px;
+    margin-right: 20px;
+  }
+  footer {
+    background-color: white;
+  }
+  

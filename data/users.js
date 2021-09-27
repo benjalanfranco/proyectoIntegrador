@@ -67,6 +67,7 @@ let users = {
                 foto_perfil: '/images/suarez.jpeg',
             },         
            ],
+           
     
     find: function (id){
         for (let i=0; i < posts.lista.length; i++){
@@ -83,7 +84,8 @@ let users = {
             }
         }
         return result
-    }
-}
+    },
+
+        };
 
 module.exports = users;
