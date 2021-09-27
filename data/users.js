@@ -86,4 +86,4 @@ let users = {
     }
 }
 
-module.exports = posts;
+module.exports = users;
