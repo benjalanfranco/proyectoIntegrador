@@ -85,7 +85,7 @@ ul li a{
     display: inline;
     font-size: 13px;
     font-weight: bold;
-    color: rgb(207, 119, 17)!important;
+    color: rgb(6, 77, 105)!important;
     text-decoration: none;
 }
 
@@ -93,5 +93,12 @@ h5{
     display: inline;
     font-size: 13px;
     font-weight: bold;
-    color: rgb(207, 119, 17)!important;
+    color: rgb(6, 77, 105)!important;
+}
+
+h5 a {
+    display: inline;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(6, 77, 105)!important;
 }
