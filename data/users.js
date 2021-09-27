@@ -2,7 +2,7 @@ let users = {
     lista: [
             {
                 id: 1,
-                usuario: 'liomessi',
+                username: 'liomessi',
                 nombre: 'Lionel',
                 apellido: 'Messi',
                 email: 'lapulga@gmail.com',
@@ -13,7 +13,7 @@ let users = {
             },
             {
                 id: 2,
-                usuario: 'eldibu',
+                username: 'eldibu',
                 nombre: 'Emiliano',
                 apellido: 'Martinez',
                 email: 'dibu@gmail.com',
@@ -24,7 +24,7 @@ let users = {
             },
             {
                 id: 3,
-                usuario: 'cristiano',
+                username: 'cristiano',
                 nombre: 'Cristiano',
                 apellido: 'Ronaldo',
                 email: 'cristiano@cr7.com',
@@ -35,7 +35,7 @@ let users = {
             },
             {
                 id: 4,
-                usuario: 'pedritoperez',
+                username: 'pedritoperez',
                 nombre: 'Pedro',
                 apellido: 'Perez',
                 email: 'pedroperez@gmail.com',
@@ -46,7 +46,7 @@ let users = {
             },
             {
                 id: 5,
-                usuario: 'alexiamennes',
+                username: 'alexiamennes',
                 nombre: 'Alexia',
                 apellido: 'Mennes',
                 email: 'alexiamennes@gmail.com',
@@ -57,7 +57,7 @@ let users = {
             },
             {
                 id: 6,
-                usuario: 'marceloalegri',
+                username: 'marceloalegri',
                 nombre: 'Marcelo',
                 apellido: 'Alegri',
                 email: 'marceloalegri@gmail.com',
@@ -76,7 +76,7 @@ let users = {
             }
         }
     }, 
-    findByUser: function(userId){
+    findByUsername: function(username){
         let result = [];
         for (let i = 0; i < this.lista.length; i++){
             if (this.lista[i].user_id == userId) {

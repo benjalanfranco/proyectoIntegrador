@@ -141,21 +141,7 @@ let posts = {
                 user: { id: 3, username: 'cristiano', firstName: 'Cristiano'},
 
                 comentarios: comments.findByPost(10)
-            },
-            {
-                id: 1,
-                user_id: 5,
-                ubicacion: "Lisboa",
-                imagen: '/images/surfPost.jpg',
-                likes: 634,
-                pie: 'Unas olitas para sanar el alma',
-                createdAt: '25 de septiembre de 2021',
-                categoria: 'Otro',
-                username: 'alexiamennes',
-                user: { id: 5, username: 'alexiamennes', firstName: 'Alexia'},
-
-                comentarios: comments.findByPost(1)
-            },         
+            },        
            ],
     
     find: function (id){

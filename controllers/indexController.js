@@ -9,7 +9,10 @@ const indexController = {
   },
   registrarse: function(req, res, next) {
     res.render('registracion', { title: 'Express' });
-  }
+  },
+  resultados: function (req, res, next) {
+    res.render('resultadoBusqueda', {search: req.query.search})
+},
 }
 
 module.exports = indexController;
