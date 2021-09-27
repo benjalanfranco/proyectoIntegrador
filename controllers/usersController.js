@@ -1,20 +1,20 @@
+const posts = require ('../data/posts');
+const users = require ('../data/users');
+
 const usersController = {
-    usuario: function(req, res, next) {
+    miPerfil: function(req, res, next) {
       res.render('miPerfil', { title: 'Express' });
     },
     detalleUsuario: function(req, res, next) {
-        res.render('detalleUsuario', { title: 'Express' });
-    },
-    agregar: function(req, res, next) {
-        res.render('agregarPost', { title: 'Express' });
-    },
-    detallePost: function(req, res, next) {
-        res.render('detallePost', { title: 'Express' });
+        let user = users.findByUsername(req.params.usuario);
+        let post = posts.findByUsername(req.params.usuario);
+        if (user) {
+            res.render('detalleUsuario', { user, post });
+        }
     },
     editarPerfil: function(req, res, next) {
         res.render('editarPerfil', { title: 'Express' });
     }
-
-  }
+}
   
   module.exports = usersController;

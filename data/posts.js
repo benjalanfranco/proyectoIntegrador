@@ -11,8 +11,8 @@ let posts = {
                 pie: 'Unas olitas para sanar el alma',
                 createdAt: '25 de septiembre de 2021',
                 categoria: 'Otro',
-                username: 'alexiamennes',
-                user: { id: 5, username: 'alexiamennes', firstName: 'Alexia'},
+                usuario: 'alexiamennes',
+                user: { id: 5, usuario: 'alexiamennes', firstName: 'Alexia'},
 
                 comentarios: comments.findByPost(1)
             },
@@ -25,8 +25,8 @@ let posts = {
                 pie: 'Probando cosas nuevas',
                 createdAt: '13 de agosto de 2021',
                 categoria: 'Rugby',
-                username: 'pedritoperez',
-                user: { id: 4, username: 'pedritoperez', firstName: 'Pedro'},
+                usuario: 'pedritoperez',
+                user: { id: 4, usuario: 'pedritoperez', firstName: 'Pedro'},
 
                 comentarios: comments.findByPost(2)
             },
@@ -39,8 +39,8 @@ let posts = {
                 pie: 'Disfrutando la vuelta a casa! Totalmente agradecido por todo.',
                 createdAt: '11 de Julio de 2021',
                 categoria: 'Futbol',
-                username: 'leomessi',
-                user: { id: 1, username: 'leomessi', firstName: 'Lionel'},
+                usuario: 'leomessi',
+                user: { id: 1, usuario: 'leomessi', firstName: 'Lionel'},
 
                 comentarios: comments.findByPost(3)
             },
@@ -53,8 +53,8 @@ let posts = {
                 pie: 'Un grande Lucho!! Ejemplo de grandeza y humildad',
                 createdAt: '22 de febrero de 2021',
                 categoria: 'Futbol',
-                username: 'marceloalegri',
-                user: { id: 6, username: 'marecloalegri', firstName: 'Marcelo'},
+                usuario: 'marceloalegri',
+                user: { id: 6, usuario: 'marecloalegri', firstName: 'Marcelo'},
 
                 comentarios: comments.findByPost(4)
             },
@@ -67,8 +67,8 @@ let posts = {
                 pie: 'Ya devuelta en casa! Cuarenteneando :/',
                 createdAt: '16 de septiembre de 2021',
                 categoria: 'Otro',
-                username: 'alexiamennes',
-                user: { id: 5, username: 'alexiamennes', firstName: 'Alexia'},
+                usuario: 'alexiamennes',
+                user: { id: 5, usuario: 'alexiamennes', firstName: 'Alexia'},
 
                 comentarios: comments.findByPost(5)
             },
@@ -81,8 +81,8 @@ let posts = {
                 pie: 'Volviendo a mi habitat natural!!',
                 createdAt: '8 de septiembre de 2021',
                 categoria: 'Otro',
-                username: 'pedritoperez',
-                user: { id: 4, username: 'pedritoperez', firstName: 'Pedro'},
+                usuario: 'pedritoperez',
+                user: { id: 4, usuario: 'pedritoperez', firstName: 'Pedro'},
 
                 comentarios: comments.findByPost(6)
             },
@@ -95,8 +95,8 @@ let posts = {
                 pie: 'A seguir difrutando con el equipo. @cristiano abrazo grande,',
                 createdAt: '26 de septiembre de 2021',
                 categoria: 'Futbol',
-                username: 'eldibu',
-                user: { id: 2, username: 'eldibu', firstName: 'Emiliano'},
+                usuario: 'eldibu',
+                user: { id: 2, usuario: 'eldibu', firstName: 'Emiliano'},
 
                 comentarios: comments.findByPost(7)
             },
@@ -109,8 +109,8 @@ let posts = {
                 pie: 'Sueño cumplido! Les manda un saludo a todos Phil!!',
                 createdAt: '25 de septiembre de 2021',
                 categoria: 'Golf',
-                username: 'pedritoPerez',
-                user: { id: 4, username: 'pedritoperez', firstName: 'Pedro'},
+                usuario: 'pedritoPerez',
+                user: { id: 4, usuario: 'pedritoperez', firstName: 'Pedro'},
 
                 comentarios: comments.findByPost(8)
             },
@@ -123,8 +123,8 @@ let posts = {
                 pie: 'Con el mejor deportista argentino de los ultimos tiempos! Un lujo',
                 createdAt: '3 de junio de 2021',
                 categoria: 'Basquet',
-                username: 'leomessi',
-                user: { id: 1, username: 'leomessi', firstName: 'Lionel'},
+                usuario: 'leomessi',
+                user: { id: 1, usuario: 'leomessi', firstName: 'Lionel'},
 
                 comentarios: comments.findByPost(9)
             },
@@ -137,24 +137,24 @@ let posts = {
                 pie: 'Disfrute en familia. A volver con todo. Suuu',
                 createdAt: '3 de junio de 2021',
                 categoria: 'Futbol',
-                username: 'cristiano',
-                user: { id: 3, username: 'cristiano', firstName: 'Cristiano'},
+                usuario: 'cristiano',
+                user: { id: 3, usuario: 'cristiano', firstName: 'Cristiano'},
 
                 comentarios: comments.findByPost(10)
             },        
            ],
     
-    find: function (id){
+    findById: function (Id){
         for (let i=0; i < posts.lista.length; i++){
-            if (posts.lista[i].id == id){
+            if (posts.lista[i].id == Id){
                 return posts.lista[i];
             }
         }
     }, 
-    findByUser: function(userId){
+    findByUsername: function(username){
         let result = [];
         for (let i = 0; i < posts.lista.length; i++){
-            if (posts.lista[i].user_id == userId) {
+            if (posts.lista[i].usuario == username) {
                 result.push(posts.lista[i]);
             }
         }

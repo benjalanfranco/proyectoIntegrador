@@ -2,7 +2,7 @@ let users = {
     lista: [
             {
                 id: 1,
-                username: 'liomessi',
+                usuario: 'liomessi',
                 nombre: 'Lionel',
                 apellido: 'Messi',
                 email: 'lapulga@gmail.com',
@@ -13,7 +13,7 @@ let users = {
             },
             {
                 id: 2,
-                username: 'eldibu',
+                usuario: 'eldibu',
                 nombre: 'Emiliano',
                 apellido: 'Martinez',
                 email: 'dibu@gmail.com',
@@ -24,7 +24,7 @@ let users = {
             },
             {
                 id: 3,
-                username: 'cristiano',
+                usuario: 'cristiano',
                 nombre: 'Cristiano',
                 apellido: 'Ronaldo',
                 email: 'cristiano@cr7.com',
@@ -35,7 +35,7 @@ let users = {
             },
             {
                 id: 4,
-                username: 'pedritoperez',
+                usuario: 'pedritoperez',
                 nombre: 'Pedro',
                 apellido: 'Perez',
                 email: 'pedroperez@gmail.com',
@@ -46,7 +46,7 @@ let users = {
             },
             {
                 id: 5,
-                username: 'alexiamennes',
+                usuario: 'alexiamennes',
                 nombre: 'Alexia',
                 apellido: 'Mennes',
                 email: 'alexiamennes@gmail.com',
@@ -57,7 +57,7 @@ let users = {
             },
             {
                 id: 6,
-                username: 'marceloalegri',
+                usuario: 'marceloalegri',
                 nombre: 'Marcelo',
                 apellido: 'Alegri',
                 email: 'marceloalegri@gmail.com',
@@ -67,26 +67,14 @@ let users = {
                 foto_perfil: '/images/suarez.jpeg',
             },         
            ],
-           
-    
-    find: function (id){
-        for (let i=0; i < this.lista.length; i++){
-            if (this.lista[i].id == id){
-                return this.lista[i];
-            }
-        }
-    }, 
     findByUsername: function(username){
-        let result = [];
-        for (let i = 0; i < this.lista.length; i++){
-            if (this.lista[i].user_id == userId) {
-                result.push(this.lista[i]);
-            }
-        }
-        return result
-    },
-
+        for (let i = 0; i < users.lista.length; i++) {
+            if (users.lista[i].usuario == username) {
+                return users.lista[i];
+            };
         };
+    },
+}
 
 
 module.exports = users;
