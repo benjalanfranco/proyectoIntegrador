@@ -70,9 +70,9 @@ let users = {
            
     
     find: function (id){
-        for (let i=0; i < posts.lista.length; i++){
-            if (posts.lista[i].id == id){
-                return posts.lista[i];
+        for (let i=0; i < this.lista.length; i++){
+            if (this.lista[i].id == id){
+                return this.lista[i];
             }
         }
     }, 
@@ -80,7 +80,7 @@ let users = {
         let result = [];
         for (let i = 0; i < this.lista.length; i++){
             if (this.lista[i].user_id == userId) {
-                result.push(posts.lista[i]);
+                result.push(this.lista[i]);
             }
         }
         return result
