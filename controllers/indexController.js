@@ -11,7 +11,7 @@ const indexController = {
     res.render('registracion', { title: 'Express' });
   },
   resultados: function (req, res, next) {
-    res.render('resultadoBusqueda', { title: 'Express' })
+    res.render('resultadoBusqueda', { criteria: req.query.buscador })
   },
 }
 
