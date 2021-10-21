@@ -40,14 +40,12 @@
                             <div class="post-comentarios">
                                 <h6>Comentarios</h6>
                                 <ul class="comentariosindex">
+                                    <% for( let i = 0; i < 3; i++ ) { %>
                                     <li>
-                                        <a href='/users/detalleUsuario'>Usuario</a>
-                                        <p>Comentario</p>
+                                        <a href='/users/detalleUsuario'><%= comments[i].user.username %></a>
+                                        <p><%= posts[i].comentarios.comments[i].contenido %></p>
                                     </li>
-                                    <li>
-                                        <a href='/users/detalleUsuario'>Usuario</a>
-                                        <p>Comentario</p>
-                                    </li>
+                                    <% } %>
                                     <a href="">Ver más...</a>
                                 </ul>
                             </div>

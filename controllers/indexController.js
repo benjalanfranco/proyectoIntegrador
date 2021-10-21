@@ -1,14 +1,9 @@
+const comments = require('../data/comments');
 const posts = require('../data/posts')
 
 const indexController = {
   index: function(req, res, next) {
-    res.render('index', { posts: posts.lista});
-  },
-  login: function(req, res, next) {
-    res.render('login', { title: 'Express' });
-  },
-  registrarse: function(req, res, next) {
-    res.render('registracion', { title: 'Express' });
+    res.render('index', { posts: posts.lista, comments: comments.lista});
   },
   resultados: function (req, res, next) {
     res.render('resultadoBusqueda', { criteria: req.query.buscador })
