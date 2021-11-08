@@ -31,16 +31,16 @@ Categ varchar(20) not null
 
 CREATE TABLE `Posts` (
   `idPosts` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `Usuario_id` int(10) unsigned,
+  `idUsuario` int(10) unsigned,
   `Ubicacion` varchar(45) DEFAULT NULL,
   `Imagen` varchar(45) DEFAULT NULL,
   `Descripcion` text,
   `Fecha` datetime DEFAULT NULL,
-  `CategoriaId` int(10) unsigned,
+  `idCategoria` int(10) unsigned,
   PRIMARY KEY (`idPosts`),
-  FOREIGN KEY (`Usuario_id`)
+  FOREIGN KEY (`idUsuario`)
   REFERENCES `RedSocial`.`Usuarios` (`id`),
-  FOREIGN KEY (`CategoriaId`)
+  FOREIGN KEY (`idCategoria`)
   REFERENCES `RedSocial`.`Categoria` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE `RedSocial`.`Posts` 

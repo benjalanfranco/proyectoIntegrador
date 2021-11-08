@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        Usuario_id: {
+        idUsuario: {
             type: dataTypes.INTEGER
         },
         Ubicacion: {
@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
         Fecha: {
             type: dataTypes.DATE
         },
-        CategoriaId: {
+        idCategoria: {
             type: dataTypes.INTEGER
         }
 
