@@ -1,28 +1,41 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = 'post';
+    const alias = 'Post';
     
     const cols = {
-        id: {
+        idPosts: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        user_id: {
+        Usuario_id: {
             type: dataTypes.INTEGER
         },
-        content: {
+        Ubicacion: {
             type: dataTypes.STRING
+        },
+        Imagen: {
+            type: dataTypes.STRING
+        },
+        Descripcion: {
+            type: dataTypes.STRING
+        },
+        Fecha: {
+            type: dataTypes.DATE
+        },
+        CategoriaId: {
+            type: dataTypes.INTEGER
         }
+
     }
 
     const config = {
-        tableName: 'post', //Aca va lo mismo que pusimos en nuestra base de datos, si fue plural es en plural
+        tableName: 'Posts', 
         timestamps: false,
         underscored: true
     }
 
-    const post = sequelize.define(alias, cols, config)
+    const Post = sequelize.define(alias, cols, config)
 
-    return post;
+    return Post;
 }
 
