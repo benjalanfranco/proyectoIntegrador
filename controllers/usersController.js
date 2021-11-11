@@ -1,17 +1,27 @@
-const posts = require ('../data/posts');
-const users = require ('../data/users');
+const db = require('../database/models');
 
 const usersController = {
     miPerfil: function(req, res, next) {
       res.render('miPerfil', { title: 'Express' });
     },
     detalleUsuario: function(req, res, next) {
-        let user = users.findByUsername(req.params.usuario);
-        let post = posts.findByUsername(req.params.usuario);
-        if (user) {
-            res.render('detalleUsuario', { user, post });
-        }
+     
+      db.User.findByPk(req.params.usuario)
+      .then((user) => {
+        
+        db.Post.findAll({ where: idUsuario = req.params.usuario})
+        .then((post) => {
+          res.render('detalleUsuario', { user, post });
+        })
+        .catch((error) => {
+          res.render(error)
+        });
+      })
+      .catch((error) => {
+        res.render(error)
+      })       
     },
+
     editarPerfil: function(req, res, next) {
         res.render('editarPerfil', { title: 'Express' });
     },
