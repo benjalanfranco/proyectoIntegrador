@@ -30,7 +30,7 @@ Categ varchar(20) not null
 );
 
 CREATE TABLE `Posts` (
-  `idPosts` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `idUsuario` int(10) unsigned,
   `Ubicacion` varchar(45) DEFAULT NULL,
   `Imagen` varchar(45) DEFAULT NULL,
