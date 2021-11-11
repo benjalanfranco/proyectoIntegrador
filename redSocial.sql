@@ -3,7 +3,7 @@ CREATE SCHEMA RedSocial;
 USE RedSocial;
 
 CREATE TABLE Usuarios (
-id int(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+idUsuario int(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 Usuario varchar(25) UNIQUE KEY not null,
 Nombre varchar(20) not null,
 Apellido varchar(25) not null,
