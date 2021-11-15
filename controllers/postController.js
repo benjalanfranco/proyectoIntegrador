@@ -9,7 +9,7 @@ const postController = {
           return  res.render('error')
         }
 
-        db.Comment.findAll({ where: {idPost = req.params.id} } )
+        db.Comment.findAll({ where: {idPost: req.params.id} } )
         .then((comments) => {
           res.render('detallePost', {post, comments});
         })
