@@ -9,7 +9,7 @@ const usersController = {
       db.User.findByPk(req.params.usuario)
       .then((user) => {
         
-        db.Post.findAll({ where: idUsuario = req.params.usuario})
+        db.Post.findAll({ where: {idUsuario: req.params.usuario}})
         .then((post) => {
           res.render('detalleUsuario', { user, post });
         })
