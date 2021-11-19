@@ -13,17 +13,17 @@ module.exports = (sequelize, dataTypes) => {
         idUsuario: {
             type: dataTypes.INTEGER
         },
-        Fecha: {
+        fecha: {
             type: dataTypes.DATE
         },
-        Comentario: {
+        comentario: {
             type: dataTypes.STRING
         }
 
     }
 
     const config = {
-        tableName: 'Comentarios', 
+        tableName: 'comentarios', 
         timestamps: false
     }
 

@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const op = db.Sequelize.Op;
 
 const indexController = {
   index: function(req, res, next) {
@@ -9,11 +10,31 @@ const indexController = {
       .catch((error) => {
         res.send(error)  //es como console.log. Me va a mostrar el error en el medio de la pantalla.
       })
-    
   },
-  resultados: function (req, res, next) {
-    res.render('resultadoBusqueda', { criteria: req.query.buscador })
+  registro: function(req, res, next) {
+    res.render('registracion');
   },
+  guardar: function(req, res, next) {
+    db.User.create(req.body)
+    .then((post) => {
+      res.redirect('/login');
+    }).catch((error) => {
+      res.render(error)
+    })
+  },
+  resultados: function(req, res, next) {
+
+    db.Post.findAll({
+        where: [
+          {descripcion: {[op.like]: "%req.query.criteria%"}}
+        ] 
+    }) .then((posts)=> {
+    res.render('resultadoBusqueda', { posts, criteria: req.query.criteria })
+    })
+    .catch((error) => {
+    res.render(error)
+    });
+  }
 }
 
 module.exports = indexController;

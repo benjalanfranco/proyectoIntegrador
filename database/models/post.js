@@ -10,16 +10,16 @@ module.exports = (sequelize, dataTypes) => {
         idUsuario: {
             type: dataTypes.INTEGER
         },
-        Ubicacion: {
+        ubicacion: {
             type: dataTypes.STRING
         },
-        Imagen: {
+        imagen: {
             type: dataTypes.STRING
         },
-        Descripcion: {
+        descripcion: {
             type: dataTypes.STRING
         },
-        Fecha: {
+        fecha: {
             type: dataTypes.DATE
         },
         idCategoria: {
@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const config = {
-        tableName: 'Posts', 
+        tableName: 'posts', 
         timestamps: false
     }
 

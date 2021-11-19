@@ -4,38 +4,39 @@ USE RedSocial;
 
 CREATE TABLE Usuarios (
 id int(10) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-Usuario varchar(25) UNIQUE KEY not null,
-Nombre varchar(20) not null,
-Apellido varchar(25) not null,
-Email varchar(320) not null,
-Contrasena varchar(40) not null,
-Num_telefono varchar(15),
-Nacimiento date not null,
-Foto_perfil varchar(120)
+usuario varchar(25) UNIQUE KEY not null,
+nombre varchar(20) not null,
+apellido varchar(25) not null,
+email varchar(320) not null,
+contrasena varchar(40) not null,
+num_telefono varchar(15),
+nacimiento date not null,
+foto_perfil varchar(120)
 );
 
 CREATE TABLE Comentarios(
 id int(10) unsigned not null PRIMARY KEY AUTO_INCREMENT,
 idPost int(10) not null,
 idUsuario int (10) not null,
-Fecha date not null,
-Comentario varchar (150) not null,
+fecha date not null,
+comentario varchar (150) not null,
 FOREIGN KEY (idPost) references Posts(id),
 FOREIGN KEY (idUsuario) references Usuarios(id)
 );
 
 CREATE TABLE Categoria(
 id int(10) unsigned PRIMARY KEY AUTO_INCREMENT,
-Categ varchar(20) not null
+categ varchar(20) not null
 );
 
 CREATE TABLE `Posts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `idUsuario` int(10) unsigned,
-  `Ubicacion` varchar(45) DEFAULT NULL,
-  `Imagen` varchar(45) DEFAULT NULL,
-  `Descripcion` text,
-  `Fecha` datetime DEFAULT NULL,
+  `ubicacion` varchar(45) DEFAULT NULL,
+  `imagen` varchar(45) DEFAULT NULL,
+  `likes` int(10) unsigned
+  `descripcion` text,
+  `fecha` datetime,
   `idCategoria` int(10) unsigned,
   PRIMARY KEY (`idPosts`),
   FOREIGN KEY (`idUsuario`)
@@ -44,7 +45,7 @@ CREATE TABLE `Posts` (
   REFERENCES `RedSocial`.`Categoria` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ALTER TABLE `RedSocial`.`Posts` 
-ADD COLUMN `Likes` INT(10) UNSIGNED NOT NULL AFTER `Imagen`;
+ADD COLUMN `likes` INT(10) UNSIGNED NOT NULL AFTER `Imagen`;
 
 INSERT INTO Categoria values
 (DEFAULT, 'Futbol'),

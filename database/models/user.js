@@ -10,32 +10,32 @@ module.exports = (sequelize, dataTypes) => {
         usuario: {
             type: dataTypes.STRING
         },
-        Nombre: {
+        nombre: {
             type: dataTypes.STRING
         },
-        Apellido: {
+        apellido: {
             type: dataTypes.STRING
         },
-        Email: {
+        email: {
             type: dataTypes.STRING
         },
-        Contraseña: {
+        contraseña: {
             type: dataTypes.STRING
         },
-        Num_telefono: {
+        num_telefono: {
             type: dataTypes.STRING
         },
-        Nacimiento: {
+        nacimiento: {
             type: dataTypes.DATE
         },
-        Foto_perfil: {
+        foto_perfil: {
             type: dataTypes.STRING
         }
 
     }
 
     const config = {
-        tableName: 'Usuarios',
+        tableName: 'usuarios',
         timestamps: false
     }
 

@@ -10,8 +10,8 @@ const usersController = {
       .then((user) => {
         
         db.Post.findAll({ where: {idUsuario: req.params.usuario}})
-        .then((post) => {
-          res.render('detalleUsuario', { user, post });
+        .then((posts) => {
+          return res.render('detalleUsuario', { user, posts });
         })
         .catch((error) => {
           res.render(error)
@@ -27,10 +27,7 @@ const usersController = {
     },
     login: function(req, res, next) {
         res.render('login', { title: 'Express' });
-      },
-    registrarse: function(req, res, next) {
-        res.render('registracion', { title: 'Express' });
-      }
+    },
 }
   
   module.exports = usersController;
