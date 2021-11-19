@@ -9,8 +9,11 @@ const session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var postRouter = require('./routes/post');
+const db = require('./database/models');
 
 var app = express();
+
+db.sequelize.sync({alter:true});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
