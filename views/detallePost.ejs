@@ -23,7 +23,7 @@
                         <form action="/post/<%= post.id %>/eliminarPost" method="POST" >
                         <button type="submit">Eliminar Posteo</button>
                         </form>
-                        
+
                         <% comments.forEach(comment => { %>
                         <div class="lista-comentarios" >
                             <div class="comentario uk-flex uk-flex-middle uk-margin-small-top">
@@ -35,12 +35,14 @@
                             </div>                           
                         </div>
                         <% }); %>
-                        <div class="agregar-comentario uk-flex uk-flex-middle">
-                            <form action="" class="uk-text-center">
-                              <input type="text" class="uk-input" placeholder="Agregar comentario"> 
-                              <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Comentar</button>
-                            </form>
-                        </div>
+
+                        <form method="POST">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Comentar</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" name="comentario" id="comentario" rows="3">></textarea>
+                                <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Comentar</button>
+                            </div>
+                        </form>
                     </article>
                 </section>
             </div>

@@ -25,9 +25,6 @@ const usersController = {
     editarPerfil: function(req, res, next) {
         res.render('editarPerfil', { title: 'Express' });
     },
-    login: function(req, res, next) {
-        res.render('login', { title: 'Express' });
-    },
 }
   
   module.exports = usersController;

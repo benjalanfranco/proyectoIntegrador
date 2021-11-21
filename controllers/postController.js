@@ -50,7 +50,7 @@ const postController = {
       db.Post.update({
         descripcion: req.body.descripcion
       }, {where: {id: req.params.id}})
-      .then((post)=> {
+      .then(()=> {
         res.redirect('/');
       }).catch((error) => {
         return res.render(error)
@@ -60,6 +60,17 @@ const postController = {
       db.Post.destroy({where: {id: req.params.id}})
       .then(()=> {
         res.redirect('/');
+      }).catch((error) => {
+        return res.render(error)
+      })  
+    },
+    comentar: function(req, res, next) {
+      db.Comment.create({
+        idPost: req.params.id,
+        idUsuario: "1", //Todavia no estan conectadas las bases de datos
+        comentario: req.body.comentario,
+      }).then((post)=> {
+        res.redirect('/post/'+req.params.id);
       }).catch((error) => {
         return res.render(error)
       })  

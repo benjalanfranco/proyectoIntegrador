@@ -20,13 +20,32 @@ const indexController = {
       res.redirect('/login');
     }).catch((error) => {
       res.render(error)
-    })
+      });
+  },
+  login: function(req, res, next) {
+    if (req.method == 'POST') {
+      db.User.findOne({where: {usuario: req.body.usuario}})
+      .then((user)=> {
+        if (!user) {
+          return res.send('No existe ese usuario')
+        }
+        if (user.contrasena == req.body.contrasena){
+          return res.redirect('/')
+        } else {
+          return res.send('La contraseña es incorrecta')
+        }
+      }).catch((error) => {
+        res.render(error)
+        });
+    } else {
+      return res.render('login')
+    }
   },
   resultados: function(req, res, next) {
 
     db.Post.findAll({
         where: [
-          {descripcion: {[op.like]: "%req.query.criteria%"}}
+          {descripcion: {[op.like]: req.query.criteria}}
         ] 
     }) .then((posts)=> {
     res.render('resultadoBusqueda', { posts, criteria: req.query.criteria })
