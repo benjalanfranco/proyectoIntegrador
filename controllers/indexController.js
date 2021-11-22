@@ -30,7 +30,7 @@ const indexController = {
           return res.send('No existe ese usuario')
         }
         if (user.contrasena == req.body.contrasena){
-          return res.redirect('/')
+          return res.redirect('/login')
         } else {
           return res.send('La contraseña es incorrecta')
         }
@@ -43,10 +43,9 @@ const indexController = {
   },
   resultados: function(req, res, next) {
 
-    db.Post.findAll({
-        where: [
-          {descripcion: {[op.like]: req.query.criteria}}
-        ] 
+    db.Post.findAll({ where: 
+      {descripcion: {[op.like]: "%"+req.query.criteria+"%"}}
+
     }) .then((posts)=> {
     res.render('resultadoBusqueda', { posts, criteria: req.query.criteria })
     })

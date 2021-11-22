@@ -6,10 +6,10 @@ const usersController = {
     },
     detalleUsuario: function(req, res, next) {
      
-      db.User.findByPk(req.params.usuario)
+      db.User.findByPk(req.params.id)
       .then((user) => {
         
-        db.Post.findAll({ where: {idUsuario: req.params.usuario}})
+        db.Post.findAll({ where: {id: req.params.id}})
         .then((posts) => {
           return res.render('detalleUsuario', { user, posts });
         })

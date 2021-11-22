@@ -7,7 +7,7 @@ router.get('/miPerfil', usersController.miPerfil);
 
 router.get('/editarPerfil', usersController.editarPerfil);
 
-router.get('/detalleUsuario/:idUsuario', usersController.detalleUsuario);
+router.get('/detalleUsuario/:id', usersController.detalleUsuario);
 
 
 
