@@ -14,10 +14,6 @@ var app = express();
 
 db.sequelize.sync({alter:true});
 
-app.use(session( {secret: "Para identificar Deporter",
-                  resave: false,
-                  saveUninitialized: true }));
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -28,6 +24,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session( {secret: "deporter",
+                 resave: false,
+                 saveUninitialized: true }));
+
+
+
+app.use(function(req, res, next) {
+	if (req.session.usuarioLog != undefined) {
+		res.locals.usuarioLog = req.session.usuarioLog
+     }
+return next();
+});
 
 
 app.use('/', indexRouter);

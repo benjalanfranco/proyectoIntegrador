@@ -29,8 +29,9 @@ const indexController = {
         if (!user) {
           return res.send('No existe ese usuario')
         }
+        req.session.usuarioLog = user;
         if (user.contrasena == req.body.contrasena){
-          return res.redirect('/login')
+          return res.redirect('/')
         } else {
           return res.send('La contraseña es incorrecta')
         }

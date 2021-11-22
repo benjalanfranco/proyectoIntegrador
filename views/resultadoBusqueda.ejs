@@ -11,7 +11,7 @@
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                 <% if (posts.length == 0) {  %> 
                     <div class="alert alert-danger" role="alert">
-                        Lo sentimos, no encontramos resultados para <%= criteria %>. 
+                        Lo sentimos, no encontramos resultados para "<%= buscador %>". 
                     </div>
                 <% } else { %>
                     <% posts.forEach(post => { %>
