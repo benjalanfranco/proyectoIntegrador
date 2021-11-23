@@ -37,7 +37,8 @@ const postController = {
       })  
     },
     editar: function(req, res, next) {
-      
+      if(req.file) req.body.imagen = (req.file.destination + req.file.filename).replace('public', '')
+
       db.Post.findByPk(req.params.id)
       .then((post) => {
         if (!post){
