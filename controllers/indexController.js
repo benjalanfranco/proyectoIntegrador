@@ -31,9 +31,9 @@ const indexController = {
         if (!user) {
           return res.send('No existe ese usuario')
         }
-        req.session.usuarioLog = user;
-        res.cookie('usuario', user, {maxAge: 100 * 60 * 60 * 24 * 3})
         if (bcrypt.compareSync(req.body.contrasena, user.contrasena)){
+          req.session.usuarioLog = user;
+          res.cookie('usuario', user, {maxAge: 100 * 60 * 60 * 24 * 3})
           return res.redirect('/')
         } else {
           return res.send('La contraseña es incorrecta')
