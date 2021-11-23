@@ -9,7 +9,7 @@ router.get('/registracion', indexController.registro);
 router.post('/registracion', indexController.guardar);
 
 router.all('/login', indexController.login);
-router.all('logout', indexController.logout)
+router.all('/logout', indexController.logout)
 
 router.get('/resultados', indexController.resultados);
 

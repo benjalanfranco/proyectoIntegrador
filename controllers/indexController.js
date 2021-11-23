@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const op = db.Sequelize.Op;
+const bcrypt = require('bcryptjs')
 
 const indexController = {
   index: function(req, res, next) {
@@ -15,6 +16,7 @@ const indexController = {
     res.render('registracion');
   },
   guardar: function(req, res, next) {
+    req.body.contrasena = bcrypt.hashSync(req.body.contrasena, 12);
     db.User.create(req.body)
     .then((post) => {
       res.redirect('/login');
@@ -31,7 +33,7 @@ const indexController = {
         }
         req.session.usuarioLog = user;
         res.cookie('usuario', user, {maxAge: 100 * 60 * 60 * 24 * 3})
-        if (user.contrasena == req.body.contrasena){
+        if (bcrypt.compareSync(req.body.contrasena, user.contrasena)){
           return res.redirect('/')
         } else {
           return res.send('La contraseña es incorrecta')
@@ -44,9 +46,9 @@ const indexController = {
     }
   },
   logout: function (req,res, next) {
-  res.clearCookie('usuario');
-  res.session.usuarioLog = null;
-  res.redirect('/');
+    res.clearCookie('usuario');
+    req.session.usuarioLog = null;
+    res.redirect('/');
   },
 
   resultados: function(req, res, next) {
