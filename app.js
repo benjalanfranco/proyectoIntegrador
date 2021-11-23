@@ -12,7 +12,7 @@ const db = require('./database/models');
 
 var app = express();
 
-db.sequelize.sync({alter:true});
+//db.sequelize.sync({alter:true});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

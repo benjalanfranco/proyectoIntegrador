@@ -3,7 +3,7 @@ const op = db.Sequelize.Op;
 
 const indexController = {
   index: function(req, res, next) {
-    db.Post.findAll()
+    db.Post.findAll({include: [{ association:'user' }]})
       .then((posts) => { //posts va a ser tipo data, es donde me mete el resultado de la promesa.
         res.render('index', { posts });
       })

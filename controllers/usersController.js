@@ -2,26 +2,28 @@ const db = require('../database/models');
 
 const usersController = {
     miPerfil: function(req, res, next) {
-      res.render('miPerfil', { title: 'Express' });
-    },
-    detalleUsuario: function(req, res, next) {
+      if (!req.session.usuarioLog){
+        res.send('No estas logueado')
+      }
      
-      db.User.findByPk(req.params.id)
+      db.User.findByPk(req.session.usuarioLog.id, {include: [{association:'posts'}]})
       .then((user) => {
-        
-        db.Post.findAll({ where: {id: req.params.id}})
-        .then((posts) => {
-          return res.render('detalleUsuario', { user, posts });
-        })
-        .catch((error) => {
-          res.render(error)
-        });
+        return res.render('miPerfil', { user});
       })
       .catch((error) => {
         res.render(error)
       })       
     },
-
+    detalleUsuario: function(req, res, next) {
+     
+      db.User.findByPk(req.params.id, {include: [{association:'posts'}]})
+      .then((user) => {
+        return res.render('detalleUsuario', { user});
+      })
+      .catch((error) => {
+        res.render(error)
+      })       
+    },
     editarPerfil: function(req, res, next) {
         res.render('editarPerfil', { title: 'Express' });
     },

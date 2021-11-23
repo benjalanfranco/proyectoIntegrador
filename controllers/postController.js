@@ -9,7 +9,7 @@ const postController = {
           return  res.render('error')
         }
 
-        db.Comment.findAll({ where: {idPost: req.params.id} } )
+        db.Comment.findAll({ where: {idPost: req.params.id}, include: [{ association:'user' }] })
         .then((comments) => {
           res.render('detallePost', {post, comments});
         })
@@ -22,10 +22,12 @@ const postController = {
       });  
     },
     publicar: function(req, res, next) {
-      res.render('agregarPost', { title: 'Express' });
+      res.render('agregarPost');
     },
     guardar: function(req, res, next) {
+      if(req.file) req.body.imagen = (req.file.destination + req.file.filename).replace('public', '')
       db.Post.create({
+        imagen: req.body.imagen,
         descripcion: req.body.descripcion,
         idUsuario: req.session.usuarioLog.id
       }).then((post)=> {
