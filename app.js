@@ -4,8 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
-//const session = require('express-session');
 const session = require('express-session');
 
 var indexRouter = require('./routes/index');
@@ -31,7 +29,6 @@ app.use(session( {secret: "deporter",
                  resave: false,
                  saveUninitialized: true }));
 
-
 //app.use(function(req, res, next) {
 //  res.locals.usuarioLog = {usuario: 'cristiano'}
 //  next ();
@@ -43,6 +40,13 @@ app.use(function(req, res, next) {
 return next();
 });
 
+//cookies 
+app.use(function(req, res, next) {
+ if( req.cookies.user !== undefined && req.session.usuarioLog === undefined) {
+      req.session.usuarioLog = req.cookies.user;
+ }
+next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

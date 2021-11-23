@@ -26,7 +26,8 @@ const postController = {
     },
     guardar: function(req, res, next) {
       db.Post.create({
-        descripcion: req.body.descripcion
+        descripcion: req.body.descripcion,
+        idUsuario: req.session.usuarioLog.id
       }).then((post)=> {
         res.redirect('/');
       }).catch((error) => {
@@ -65,9 +66,12 @@ const postController = {
       })  
     },
     comentar: function(req, res, next) {
+      if (req.session.usuarioLog == undefined){
+        res.redirect('/post/'+req.params.id);
+      }
       db.Comment.create({
         idPost: req.params.id,
-        idUsuario: "1", //Todavia no estan conectadas las bases de datos
+        idUsuario: req.session.usuarioLog.id,
         comentario: req.body.comentario,
       }).then((post)=> {
         res.redirect('/post/'+req.params.id);

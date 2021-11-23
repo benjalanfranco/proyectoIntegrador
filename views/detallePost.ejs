@@ -36,6 +36,8 @@
                         </div>
                         <% }); %>
 
+                        <% if (locals.usuarioLog) { %>
+
                         <form method="POST">
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Comentar</label>
@@ -43,6 +45,8 @@
                                 <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Comentar</button>
                             </div>
                         </form>
+                                                    
+                    <% } %> 
                     </article>
                 </section>
             </div>

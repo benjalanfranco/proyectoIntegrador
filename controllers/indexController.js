@@ -30,6 +30,7 @@ const indexController = {
           return res.send('No existe ese usuario')
         }
         req.session.usuarioLog = user;
+        res.cookie('usuario', user, {maxAge: 100 * 60 * 60 * 24 * 3})
         if (user.contrasena == req.body.contrasena){
           return res.redirect('/')
         } else {
@@ -42,6 +43,12 @@ const indexController = {
       return res.render('login')
     }
   },
+  logout: function (req,res, next) {
+  res.clearCookie('usuario');
+  res.session.usuarioLog = null;
+  res.redirect('/');
+  },
+
   resultados: function(req, res, next) {
 
     db.Post.findAll({ where: 
