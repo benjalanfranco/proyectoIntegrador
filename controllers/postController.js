@@ -65,7 +65,7 @@ const postController = {
       .then(()=> {
         res.redirect('/');
       }).catch((error) => {
-        return res.render(error)
+        return res.send(error)
       })  
     },
     comentar: function(req, res, next) {

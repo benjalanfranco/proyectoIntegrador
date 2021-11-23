@@ -21,9 +21,12 @@
                             <h6 class="uk-margin-remove uk-width-2-4"><%= post.descripcion %></h6>
                         </div>
                         <a href='/post/<%= post.id %>/editarPost'>Editar Posteo</a>
+
+                        <% if (post.usuario == locals.usuarioLog.usuario) { %> 
                         <form action="/post/<%= post.id %>/eliminarPost" method="POST" >
                         <button type="submit">Eliminar Posteo</button>
                         </form>
+                        <% } %>
 
                         <% comments.forEach(comment => { %>
                         <div class="lista-comentarios" >
