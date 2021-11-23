@@ -8,33 +8,34 @@
 
     <main>
       <h1>Editar Post</h1>
-        <form method="POST">
-            <div class="form-group">
-              <label for="exampleFormControlFile1">Insertar imagen</label>
-              <input type="file" name="Archivo" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Ubicacion</label>
-                <input type="text" class="form-control" name="Ubicacion" id="exampleFormControlInput1" placeholder="ubicacion">
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Categoria</label>
-                <select class="form-control" id="exampleFormControlSelect1" name="Categoria">
-                  <option>Futbol</option>
-                  <option>Tenis</option>
-                  <option>Rugby</option>
-                  <option>Volley</option>
-                  <option>Basket</option>
-                  <option>Golf</option>
-                  <option>Otro</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Descripcion</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" id="descripcion" rows="3"><%= post.descripcion %></textarea>
-              </div>
-              <button type="submit">Editar</button>
-          </form>
+      <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="imagen">Editar imagen</label>
+          <input type="file" name="imagen" class="form-control-file" id="imagen">
+          <%= post.imagen %>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Ubicacion</label>
+            <input type="text" class="form-control" name="ubicacion" id="exampleFormControlInput1" placeholder="<%= post.ubicacion %>">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Categoria</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="<%= post.categoria %>">
+              <option>Futbol</option>
+              <option>Tenis</option>
+              <option>Rugby</option>
+              <option>Volley</option>
+              <option>Basket</option>
+              <option>Golf</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Descripcion</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="descripcion" id="descripcion" rows="3"> <%= post.descripcion %> </textarea>
+          </div>
+          <button type="submit">Editar</button>
+      </form>
     </main>
     
     <%- include('./partials/footer') %> 

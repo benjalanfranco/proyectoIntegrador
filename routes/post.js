@@ -12,7 +12,8 @@ router.get('/:id', postController.detallePost);
 router.post('/:id', postController.comentar);
 
 router.get('/:id/editarPost', postController.editar);
-router.post('/:id/editarPost', postController.actualizar);
+router.post('/:id/editarPost', upload.single('imagen'), postController.actualizar);
+
 
 router.post('/:id/eliminarPost', postController.eliminar);
 

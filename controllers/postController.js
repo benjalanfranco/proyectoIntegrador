@@ -37,7 +37,6 @@ const postController = {
       })  
     },
     editar: function(req, res, next) {
-      
       db.Post.findByPk(req.params.id)
       .then((post) => {
         if (!post){
@@ -50,7 +49,9 @@ const postController = {
       }); 
     },
     actualizar: function(req, res, next) {
+      if(req.file) req.body.imagen = (req.file.destination + req.file.filename).replace('public', '')
       db.Post.update({
+        imagen: req.body.imagen,
         descripcion: req.body.descripcion
       }, {where: {id: req.params.id}})
       .then(()=> {

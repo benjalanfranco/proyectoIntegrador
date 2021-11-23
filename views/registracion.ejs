@@ -8,58 +8,61 @@
 
     <main>
       <h1>Registrate</h1>
-        <form method="POST">
-            <div class="form-row">
-              <div class="col-md-4 mb-3">
-                <label for="validationDefault01">Nombre</label>
-                <input type="text" class="form-control" id="validationDefault01" placeholder="Nombre" name="nombre" id="nombre" value="" required>
+      <form method="POST" enctype="multipart/form-data">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="imagen">Insertar foto de perfil</label>
+            <input type="file" name="foto_perfil" class="form-control-file" id="foto_perfil">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault01">Nombre</label>
+            <input type="text" class="form-control" id="validationDefault01" placeholder="Nombre" name="nombre" id="nombre" value="" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault02">Apellido</label>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Apellido" name="apellido" id="apellido" value="" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefaultUsername">Usuario</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend2">@</span>
               </div>
-              <div class="col-md-4 mb-3">
-                <label for="validationDefault02">Apellido</label>
-                <input type="text" class="form-control" id="validationDefault02" placeholder="Apellido" name="apellido" id="apellido" value="" required>
-              </div>
-              <div class="col-md-4 mb-3">
-                <label for="validationDefaultUsername">Usuario</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                  </div>
-                  <input type="text" class="form-control" id="validationDefaultUsername" name="usuario" id="usuario" placeholder="" aria-describedby="inputGroupPrepend2" required>
-                </div>
-              </div>
+              <input type="text" class="form-control" id="validationDefaultUsername" name="usuario" id="usuario" placeholder="" aria-describedby="inputGroupPrepend2" required>
             </div>
-            <div class="form-row">
-              <div class="col-md-3 mb-3">
-                <label for="validationDefault04">Email</label>
-                <input type="email" class="form-control" id="validationDefault04" name="email" placeholder="Email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault04">Email</label>
+            <input type="email" class="form-control" id="validationDefault04" name="email" placeholder="Email" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault05">Telefono</label>
+            <input type="tel" class="form-control" id="validationDefault05" name="num_telefono" placeholder="Telefono" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault05">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="validationDefault05" name="nacimiento" placeholder="Fecha de nacimiento" required>
+          </div>
+          <div class="form-group">
+                <label for="inputPassword6">Contraseña</label>
+                <input type="password" id="inputPassword6" name="contrasena" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
+                <small id="passwordHelpInline" class="text-muted">
+                  Must be 8-20 characters long.
+                </small>
               </div>
-              <div class="col-md-3 mb-3">
-                <label for="validationDefault05">Telefono</label>
-                <input type="tel" class="form-control" id="validationDefault05" name="num_telefono" placeholder="Telefono" required>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="validationDefault05">Fecha de Nacimiento</label>
-                <input type="date" class="form-control" id="validationDefault05" name="nacimiento" placeholder="Fecha de nacimiento" required>
-              </div>
-              <div class="form-group">
-                    <label for="inputPassword6">Contraseña</label>
-                    <input type="password" id="inputPassword6" name="contrasena" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
-                    <small id="passwordHelpInline" class="text-muted">
-                      Must be 8-20 characters long.
-                    </small>
-                  </div>
-            </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                <label class="form-check-label" for="invalidCheck2">
-                  Acepto Terminos y Condiciones
-                </label>
-              </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Listo</button>
-          </form>
-    </main>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+            <label class="form-check-label" for="invalidCheck2">
+              Acepto Terminos y Condiciones
+            </label>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Listo</button>
+      </form>
 
     <%- include('./partials/footer') %>
 
