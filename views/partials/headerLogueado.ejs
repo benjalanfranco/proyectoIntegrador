@@ -1,25 +1,24 @@
-<header class="uk-background-primary">
-    <section class=" uk-container uk-container-large">
-        <div class="">
-            <nav class="" uk-navbar>
-                <div class="uk-navbar-left">
-                    <h2 class="logo"><a href='/'>Deporter</a></h2>
-                </div>
+<header class="">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+                <a class="navbar-brand" href="/">Deporter</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="uk-navbar-center">
                     <ul class="uk-flex uk-flex-between uk-flex-middle">
-                        <li><a href='/'>Home</a></li>
-                        <li><a href="">Logout</a></li>
+                        <li><a href='/miPerfil'>Perfil</a></li>
+                        <li><a href="/logout">Logout</a></li>
                     </ul>
                 </div>
-                <div class="uk-navbar-right">
-                    <a href='/users/agregarPost'>Agregar post</a>
-                    <a href='/users'>Mi perfil</a>
-                    <form action="" class="uk-search uk-search-default">
-                        <span uk-search-icon></span>
-                        <input type="search" class="uk-search-input" placeholder="Buscar...">
-                    </form>
-                </div>
-            </nav>
-        </div>
-    </section>
-</header>
+                <a href="/post/agregarPost">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Agregar Post</button>
+                    </a>
+                    <div>
+                      <form class="form-inline my-2 my-lg-0"  method="get" action="/resultados">
+                          <input class="form-control mr-sm-2" name="buscador" id="buscador" type="search" placeholder="Buscar">
+                        </form>
+                    </div>
+                   
+                  </div>
+                </nav>
+        </header>
