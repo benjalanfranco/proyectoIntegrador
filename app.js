@@ -29,6 +29,15 @@ app.use(session( {secret: "deporter",
                  resave: false,
                  saveUninitialized: true }));
 
+
+//cookies 
+app.use(function(req, res, next) {
+  if( req.cookies.usuario !== undefined && req.session.usuarioLog === undefined) {
+       req.session.usuarioLog = req.cookies.usuario;
+  }
+ next();
+ });
+
 //app.use(function(req, res, next) {
 //  res.locals.usuarioLog = {usuario: 'cristiano'}
 //  next ();
@@ -40,13 +49,7 @@ app.use(function(req, res, next) {
 return next();
 });
 
-//cookies 
-app.use(function(req, res, next) {
- if( req.cookies.user !== undefined && req.session.usuarioLog === undefined) {
-      req.session.usuarioLog = req.cookies.user;
- }
-next();
-});
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
