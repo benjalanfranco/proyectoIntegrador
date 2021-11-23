@@ -52,10 +52,10 @@ const indexController = {
   resultados: function(req, res, next) {
 
     db.Post.findAll({ where: 
-      {descripcion: {[op.like]: "%"+req.query.criteria+"%"}}
+      {descripcion: {[op.like]: "%"+req.query.buscador+"%"}}
 
     }) .then((posts)=> {
-    res.render('resultadoBusqueda', { posts, criteria: req.query.criteria })
+    res.render('resultadoBusqueda', { posts, buscador: req.query.buscador })
     })
     .catch((error) => {
     res.render(error)

@@ -3,7 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2f60ff659943210527061c174fe10ef8897f7bb2
 const session = require('express-session');
 
 var indexRouter = require('./routes/index');
@@ -30,6 +33,7 @@ app.use(session( {secret: "deporter",
                  saveUninitialized: true }));
 
 
+<<<<<<< HEAD
 //cookies 
 app.use(function(req, res, next) {
   if( req.cookies.usuario !== undefined && req.session.usuarioLog === undefined) {
@@ -42,6 +46,9 @@ app.use(function(req, res, next) {
 //  res.locals.usuarioLog = {usuario: 'cristiano'}
 //  next ();
 //});
+=======
+
+>>>>>>> 2f60ff659943210527061c174fe10ef8897f7bb2
 app.use(function(req, res, next) {
 	if (req.session.usuarioLog != undefined) {
 		res.locals.usuarioLog = req.session.usuarioLog
