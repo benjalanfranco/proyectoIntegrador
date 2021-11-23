@@ -33,7 +33,6 @@ app.use(session( {secret: "deporter",
                  saveUninitialized: true }));
 
 
-<<<<<<< HEAD
 //cookies 
 app.use(function(req, res, next) {
   if( req.cookies.usuario !== undefined && req.session.usuarioLog === undefined) {
@@ -46,9 +45,6 @@ app.use(function(req, res, next) {
 //  res.locals.usuarioLog = {usuario: 'cristiano'}
 //  next ();
 //});
-=======
-
->>>>>>> 2f60ff659943210527061c174fe10ef8897f7bb2
 app.use(function(req, res, next) {
 	if (req.session.usuarioLog != undefined) {
 		res.locals.usuarioLog = req.session.usuarioLog
