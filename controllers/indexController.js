@@ -27,7 +27,7 @@ const indexController = {
   },
   login: function(req, res, next) {
     if (req.method == 'POST') {
-      const user = db.User.findOne({where: {usuario: req.body.usuario}})
+      db.User.findOne({where: {usuario: req.body.usuario}})
       .then((user)=> {
         if (!user) {
           return res.send('No existe ese usuario')
