@@ -3,7 +3,7 @@ const db = require('../database/models');
 const postController = {
     detallePost: function(req, res, next) {
 
-      db.Post.findByPk(req.params.id)
+      db.Post.findByPk(req.params.id, {include: [{ association:'user' }]})
       .then((post) => {
         if (!post){
           return  res.render('error')

@@ -25,9 +25,26 @@ const usersController = {
       })       
     },
     editarPerfil: function(req, res, next) {
-      res.render('editarPerfil')
-        
+      db.User.findByPk(req.params.id)
+      .then((user) => {
+        if (!user){
+          return  res.render('error')
+        }
+        res.render('editarPerfil', {user})
+      })
+      .catch((error) => {
+        res.render(error)
+      }); 
     },
+    actualizar: function(req, res, next) {
+      if(req.file) req.body.foto_perfil = (req.file.destination + req.file.filename).replace('public', '')
+      db.User.update(req.body, {where: {id: req.params.id}})
+      .then(()=> {
+        res.redirect('/');
+      }).catch((error) => {
+        return res.render(error)
+      })  
+    }
 }
   
   module.exports = usersController;
