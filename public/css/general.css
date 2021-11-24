@@ -1,19 +1,6 @@
 *{
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 main{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 16px;
-    padding: 16px;
-    margin-bottom: 60px;
+  margin-bottom: 40px;
 }
-header {
-    background-color: white;
-  }
-
-  footer {
-    background-color: white;
-  }
-
-  
