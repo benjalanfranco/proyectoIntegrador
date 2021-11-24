@@ -26,6 +26,9 @@
                                 <li>300 seguidos</li>
                             </ul>
                         </div>
+                        <% if (user.id == locals.usuarioLog.id) { %> 
+                            <a href='/users/<%= user.id %>/editarPerfil'>Editar Perfil</a>
+                        <% } %>
                     </div>
                </section>
                <section class="muro uk-flex uk-flex-middle uk-flex-center">
