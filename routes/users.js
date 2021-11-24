@@ -8,7 +8,7 @@ let usersController = require('../controllers/usersController')
 router.get('/miPerfil', usersController.miPerfil);
 
 router.get('/editarPerfil', usersController.editarPerfil);
-router.post('/editarPerfil', upload.single('imagen'), usersController.editarPerfil);
+router.post('/editarPerfil', upload.single('foto_perfil'), usersController.editarPerfil);
 
 router.get('/detalleUsuario/:id', usersController.detalleUsuario);
 

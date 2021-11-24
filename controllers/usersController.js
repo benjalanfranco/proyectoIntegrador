@@ -25,7 +25,8 @@ const usersController = {
       })       
     },
     editarPerfil: function(req, res, next) {
-        res.render('editarPerfil',)
+      res.render('editarPerfil')
+        
     },
 }
   

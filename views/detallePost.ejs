@@ -21,14 +21,12 @@
                             <h6 class="uk-margin-remove uk-width-2-4"><%= post.descripcion %></h6>
                         </div>
 
-                        <% if (post.usuario == locals.usuarioLog.usuario) { %> 
-                            <form action="/post/<%= post.id %>/editarPost" method="POST" >
-                            <button type="submit">Editar Posteo</button>
-                            </form>
+                        <% if (post.idUsuario == locals.usuarioLog.id) { %> 
+                            <a href='/post/<%= post.id %>/editarPost'>Editar Posteo</a>
                         <% } %>
 
-                        <% if (post.usuario == locals.usuarioLog.usuario) { %> 
-                        <form action="/post/<%= post.id %>/eliminarPost" method="POST" >
+                        <% if (post.idUsuario == locals.usuarioLog.id) { %> 
+                        <form action="/post/eliminarPost" method="POST" >
                         <button type="submit">Eliminar Posteo</button>
                         </form>
                         <% } %>

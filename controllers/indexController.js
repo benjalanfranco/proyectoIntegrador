@@ -16,10 +16,9 @@ const indexController = {
     res.render('registracion');
   },
   guardar: function(req, res, next) {
-    if(req.file) req.body.imagen = (req.file.destination + req.file.filename).replace('public', '')
-    req.body.contrasena = bcrypt.hashSync(req.body.contrasena, 10);
+    if(req.file) req.body.foto_perfil = (req.file.destination + req.file.filename).replace('public', '')
     db.User.create(req.body)
-    .then((post) => {
+    .then((user) => {
       res.redirect('/login');
     }).catch((error) => {
       res.render(error)
@@ -32,8 +31,8 @@ const indexController = {
         if (!user) {
           return res.send('No existe ese usuario')
         }
-        if (bcrypt.compareSync(req.body.contrasena = user.contrasena)){
-          req.session.usuarioLog = user;
+        if (user.contrasena == req.body.contrasena){
+          req.session.usuarioLog = user;          
           res.cookie('usuario', user, {maxAge: 100 * 60 * 60 * 24 * 3})
           return res.redirect('/')
         } else {
