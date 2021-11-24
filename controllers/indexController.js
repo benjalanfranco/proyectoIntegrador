@@ -17,6 +17,7 @@ const indexController = {
   },
   guardar: function(req, res, next) {
     if(req.file) req.body.foto_perfil = (req.file.destination + req.file.filename).replace('public', '')
+    req.body.contrasena = bcrypt.hashSync(req.body.contrasena, 10);
     db.User.create(req.body)
     .then((user) => {
       res.redirect('/login');
@@ -26,12 +27,12 @@ const indexController = {
   },
   login: function(req, res, next) {
     if (req.method == 'POST') {
-      db.User.findOne({where: {usuario: req.body.usuario}})
+      const user = db.User.findOne({where: {usuario: req.body.usuario}})
       .then((user)=> {
         if (!user) {
           return res.send('No existe ese usuario')
         }
-        if (user.contrasena == req.body.contrasena){
+        if (bcrypt.compareSync(req.body.contrasena, user.contrasena)){
           req.session.usuarioLog = user;          
           res.cookie('usuario', user, {maxAge: 100 * 60 * 60 * 24 * 3})
           return res.redirect('/')
