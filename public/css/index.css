@@ -9,13 +9,16 @@ article.post div.info-usuario{
     border-bottom: 1px solid lightgray;
     margin-bottom: 5px;
 }
-article.post div.info-usuario img{
+.fotoPerfil{
     border-radius: 50px;
     padding: 1px;
     border: 1.5px solid red;
+    height: 4.5vw;
+    width: 4.5vw;
 }
 article.post div.info-usuario h4{
    margin: 8px 10px;
+   padding-top: 5px;
 }
 
 article.post div.post-body{
@@ -40,13 +43,13 @@ article.post div.post-reacciones div.post-pie{
 }
 article.post div.post-reacciones div.post-pie h5{
     margin: 0;
+    padding: 5px
 }
 article.post div.post-reacciones div.post-pie p{
     margin: 0;
 }
 article.post div.post-comentarios {
-    margin-top: 10px;
-    margin-left: 20px;
+    padding: 5px;
 }
 article.post div.post-comentarios h6{
     margin-bottom: 0;
