@@ -11,13 +11,15 @@
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex">
                 <section id="posts" class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
-                    <% posts.forEach(post => { %>
+                    
+                    
+                    <% posts.forEach(post => { %>       
                         <article class="post uk-card-default uk-flex uk-flex-column">
                             <div class="info-usuario uk-flex ">
                                 <div>
-                                    <img src="<%= post.user.foto_perfil %>" class="fotoPerfil">
+                                    <img src="<%= post.user.foto_perfil %>" class="fotoPerfil"><%# Podemos hacer esto gracias a la relacion entre post y user %>
                                 </div>
-                                <h4><a href='/users/detalleUsuario/<%= post.idUsuario %>'><%= post.user.usuario %> </a></h4>
+                                <h4><a href='/users/detalleUsuario/<%= post.idUsuario %>'><%= post.user.usuario %> </a></h4> <%# Ruta parametrizada, una para cada usuario %>
                                 
                             </div>
                             <div class="post-body uk-flex uk-flex-center">

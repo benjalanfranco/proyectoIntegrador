@@ -1,4 +1,4 @@
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, dataTypes) => {  //Traemos funcionalidades.
     const alias = 'Post';
     
     const cols = {

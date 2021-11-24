@@ -5,11 +5,11 @@ const bcrypt = require('bcryptjs')
 const indexController = {
   index: function(req, res, next) {
     db.Post.findAll({include: [{ association:'user' }]})
-      .then((posts) => { //posts va a ser tipo data, es donde me mete el resultado de la promesa.
+      .then((posts) => { 
         res.render('index', { posts });
       })
       .catch((error) => {
-        res.send(error)  //es como console.log. Me va a mostrar el error en el medio de la pantalla.
+        res.send(error)
       })
   },
   registro: function(req, res, next) {
@@ -18,7 +18,7 @@ const indexController = {
   guardar: function(req, res, next) {
     if(req.file) req.body.foto_perfil = (req.file.destination + req.file.filename).replace('public', '')
     req.body.contrasena = bcrypt.hashSync(req.body.contrasena, 10);
-    db.User.create(req.body)
+    db.User.create(req.body) //gracias a express-generator capturamos la info como un objeto
     .then((user) => {
       res.redirect('/login');
     }).catch((error) => {
