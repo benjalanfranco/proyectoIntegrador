@@ -16,7 +16,10 @@ const indexController = {
     res.render('registracion');
   },
   guardar: function(req, res, next) {
-    if(req.file) req.body.foto_perfil = (req.file.destination + req.file.filename).replace('public', '')
+    if (req.file) req.body.foto_perfil = (req.file.destination + req.file.filename).replace('public', '')
+      if (req.body.contrasena.length < 8){
+          return res.render('registracion', { error: 'La contraseña es corta'});
+      }
     req.body.contrasena = bcrypt.hashSync(req.body.contrasena, 10);
     db.User.create(req.body) //gracias a express-generator capturamos la info como un objeto
     .then((user) => {
@@ -33,8 +36,10 @@ const indexController = {
           return res.send('No existe ese usuario')
         }
         if (bcrypt.compareSync(req.body.contrasena, user.contrasena)){
-          req.session.usuarioLog = user;          
-          res.cookie('usuario', user, {maxAge: 100 * 60 * 60 * 24 * 3})
+          req.session.usuarioLog = user; 
+          if(req.body.recordarme != undefined){
+            res.cookie('usuario', user, {maxAge: 100 * 60 * 60 * 24 * 3})
+          } 
           return res.redirect('/')
         } else {
           return res.send('La contraseña es incorrecta')
